@@ -1,0 +1,879 @@
+/* =========================
+   RESET + GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #222;
+}
+
+/* =========================
+   MENU
+========================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #111;
+    padding: 15px 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #f0c040;
+}
+
+/* =========================
+   SEKCJE
+========================= */
+
+section {
+    padding: 50px 15%;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.hero-logo img {
+    max-width: 250px;
+    height: auto;
+}
+
+.hero-text h1 {
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero-info {
+    margin-top: 22px;
+    max-width: 760px;
+
+    padding: 22px 26px;
+
+    background: #fcfcfc;
+    border-radius: 12px;
+
+    box-shadow: 
+        0 8px 24px rgba(0,0,0,0.04);
+
+    font-size: 17px;
+    line-height: 1.65;
+    color: #444;
+}
+
+.hero-info strong {
+    color: #111;
+    font-weight: 600;
+}
+
+.hero-lead strong {
+    color: #111;
+    font-weight: 600;
+}
+
+/* =========================
+   FORMULARZ
+========================= */
+
+.form-box {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+}
+
+.form-box h3 {
+    margin-bottom: 28px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    color: #111;
+    position: relative;
+}
+
+/* subtelny akcent pod nagłówkiem */
+.form-box h3::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: #f0c040;
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+.form-box label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.form-box select,
+.form-box input,
+.form-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.form-left textarea {
+    height: 220px;
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #f0c040;
+    color: #111;
+}
+
+/* =========================
+   PARTNERZY / LOGA
+========================= */
+
+#partnerzy {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.partners-title {
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #777;
+}
+
+/* KONTENER */
+.logos-slider {
+    position: relative;
+    width: 100%;
+    height: 120px;              /* ← WIĘCEJ MIEJSCA */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+/* TOR */
+.logos-track {
+    display: flex;
+    align-items: center;
+    gap: 70px;                  /* ← WIĘCEJ ODDECHU */
+    width: max-content;
+    animation: scroll-logos 30s linear infinite;
+}
+
+/* POJEDYNCZE LOGO */
+.logo-item {
+    width: 220px;               /* ← SZERZEJ */
+    height: 70px;               /* ← WYŻEJ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* OBRAZ */
+.logo-item img {
+    max-height: 70px;           /* ← KLUCZ */
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.9;               /* ← BARDZIEJ WIDOCZNE */
+}
+
+/* HOVER */
+.logo-item img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* FADE PO BOKACH */
+.logos-slider::before,
+.logos-slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+}
+
+.logos-slider::before {
+    left: 0;
+    background: linear-gradient(to right, #fff, transparent);
+}
+
+.logos-slider::after {
+    right: 0;
+    background: linear-gradient(to left, #fff, transparent);
+}
+
+/* ANIMACJA */
+@keyframes scroll-logos {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .logos-slider {
+        height: 90px;
+    }
+
+    .logo-item {
+        width: 160px;
+        height: 50px;
+    }
+
+    .logo-item img {
+        max-height: 50px;
+    }
+
+    .logos-track {
+        gap: 40px;
+    }
+}
+
+
+/* =========================
+   O MNIE
+========================= */
+
+#o-mnie h2 {
+    margin-bottom: 30px;
+}
+
+.about-highlight {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 20px;
+    background: #f9f9f9;
+    border-left: 4px solid #f0c040;
+    border-radius: 6px;
+    margin-bottom: 50px;
+}
+
+.about-cards {
+    display: flex;
+    gap: 30px;
+}
+
+.about-card {
+    flex: 1;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.about-card h3 {
+    margin-bottom: 15px;
+}
+
+
+
+/* =========================
+   ZAKRES DZIAŁALNOŚCI
+========================= */
+
+.cards {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: #f5f5f5;
+    padding: 30px;
+    border-radius: 8px;
+    flex: 1;
+    text-align: center;
+}
+
+/* =========================
+   SPECJALIZACJE
+========================= */
+
+.specializations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* ZAWSZE 3 */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.spec-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.spec-card h3 {
+    margin-bottom: 15px;
+}
+
+.spec-card p {
+    margin-bottom: 20px;
+}
+
+.spec-card a {
+    align-self: flex-start;
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    border-bottom: 2px solid #f0c040;
+}
+
+.spec-card a:hover {
+    color: #f0c040;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    section {
+        padding: 80px 8%;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-logo img {
+        max-width: 140px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-cards {
+        flex-direction: column;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .logos-slider {
+        height: 65px;
+    }
+
+    .logo-item {
+        width: 110px;
+        height: 30px;
+    }
+
+    .logo-item img {
+        max-height: 30px;
+    }
+
+    .logos-track {
+        gap: 35px;
+    }
+}
+/* =========================
+   FOOTER / SIGNATURE (SLIM)
+========================= */
+
+.site-footer {
+    background: #0f0f0f;
+    padding: 14px 0;          /* ← ZNACZNIE MNIEJ */
+    text-align: center;
+    margin-top: 60px;
+}
+
+.site-footer p {
+    color: #777;
+    font-size: 12px;          /* ← mniejszy tekst */
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.site-footer a {
+    color: #aaa;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.site-footer a:hover {
+    color: #fff;
+}
+/* =========================
+   SPACING / SCALENIE SEKCJI
+========================= */
+
+/* Formularz → Partnerzy → O mnie */
+#partnerzy {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#o-mnie {
+    padding-top: 30px;
+}
+
+/* Liczniki bliżej o mnie */
+#liczniki {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* Kontakt + footer */
+#kontakt {
+    padding-bottom: 40px;
+}
+
+/* =========================
+   HOVER EFFECT – KAFELKI
+========================= */
+
+/* Wspólna baza */
+.about-card,
+.card,
+.spec-card {
+    transition: 
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+    will-change: transform;
+}
+
+/* Hover */
+.about-card:hover,
+.card:hover,
+.spec-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+.about-card:hover,
+.card:hover,
+.spec-card:hover {
+    border-top: 3px solid #f0c040;
+}
+/* =========================
+   LICZNIKI – FINAL (JEDYNA WERSJA)
+========================= */
+
+#liczniki {
+    padding: 60px 15%;
+    background: #fff;
+}
+
+.counters {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.counter {
+    flex: 1;
+    background: #fafafa;
+    padding: 22px 18px;              /* ← MNIEJ */
+    border-radius: 12px;             /* ← delikatniej */
+    text-align: center;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.06); /* ← lżejszy cień */
+    transition: 
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        opacity 0.6s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.counter.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover – delikatny */
+.counter:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+}
+
+/* Liczba */
+.counter .number {
+    font-size: 48px;          /* ← minimalnie mniejsze */
+    font-weight: 700;
+    color: #f0c040;           /* ← TEN SAM ŻÓŁTY */
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* Opis */
+.counter p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .counters {
+        flex-direction: column;
+    }
+
+    .counter {
+        padding: 26px 20px;
+    }
+
+    .counter .number {
+        font-size: 44px;
+    }
+}
+/* =========================
+   HERO – PREMIUM START
+========================= */
+
+.hero-main {
+    padding-top: 90px;
+    padding-bottom: 40px;
+}
+
+.hero {
+    align-items: flex-start;
+}
+
+/* LOGO – WIĘKSZE + PEWNIEJSZE */
+.hero-logo img {
+    max-width: 300px;     /* ← było 250 */
+}
+
+/* NAGŁÓWEK */
+.hero-text h1 {
+    font-size: 38px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+/* PODTYTUŁ */
+.subtitle {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-logo img {
+        max-width: 180px;
+    }
+
+    .hero-text h1 {
+        font-size: 30px;
+    }
+
+    .hero-main {
+        padding-top: 100px;
+    }
+}
+.form-box {
+    margin-top: -100px;
+}
+/* =========================
+   LEAD – ZBLIŻENIE HERO + FORMULARZA
+========================= */
+
+#lead {
+    padding-top: 20;
+}
+.hero-main {
+    margin-top: -40px;
+}
+/* =========================
+   STICKY CTA – FORMULARZ
+========================= */
+
+#sticky-cta {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    padding: 14px 22px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    background: #f0c040;
+    color: #111;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.25s ease;
+    z-index: 2000;
+}
+
+/* Widoczny */
+#sticky-cta.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Hover */
+#sticky-cta:hover {
+    box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+    transform: translateY(-2px);
+}
+/* =========================
+   KONTAKT – UKŁAD POZIOMY (LOGO | DANE | PRZYCISK)
+========================= */
+
+.contact-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;   /* CAŁOŚĆ NA ŚRODEK STRONY */
+    gap: 60px;
+
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* LOGO */
+.contact-left {
+    flex: 0 0 auto;
+}
+
+.contact-logo {
+    max-width: 220px;
+}
+
+/* DANE */
+.contact-right {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+/* PRZYCISK */
+#sticky-cta.in-contact {
+    position: static;
+    margin: 0;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+}
+
+.contact-left {
+    flex: 0 0 280px;
+}
+
+.contact-logo {
+    max-width: 100%;
+}
+
+.contact-right h2 {
+    margin-bottom: 20px;
+}
+
+.contact-right p {
+    font-size: 16px;
+    margin: 0;   /* ← TUTAJ JEST KLUCZ */
+    text-align: center;
+}
+.contact-label {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #777;
+    margin-bottom: 2px; /* ← TU ZNIKA PRZERWA */
+}
+.contact-right a {
+    color: #111;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-right a:hover {
+    color: #f0c040;
+}
+
+/* CTA w sekcji kontakt */
+#contact-cta {
+    margin-top: 30px;
+    padding: 14px 26px;
+    font-size: 15px;
+    font-weight: 700;
+    background: #f0c040;
+    color: #111;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: all 0.35s ease;
+}
+
+/* aktywny */
+#contact-cta.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+#sticky-cta.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+/* STICKY – normalnie */
+#sticky-cta {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+}
+
+/* GDY JEST W KONTAKCIE */
+#sticky-cta.in-contact {
+    position: static;
+    margin: 30px auto 0;
+    display: block;
+
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+}
+.contact-left {
+    flex: none;
+}
+
+.contact-logo {
+    max-width: 220px;
+}
+.contact-right h2 {
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   KONTAKT – TEKST (CENTER)
+========================= */
+
+.contact-right {
+    text-align: center;
+}
+
+.contact-label {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #777;
+    text-transform: uppercase;
+    margin-bottom: 2px;   /* BYŁO 4px */
+}
+
+.contact-value {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;  /* BYŁO 18px */
+}
+
+.contact-value a {
+    color: #111;
+    text-decoration: none;
+}
+
+.contact-value a:hover {
+    color: #f0c040;
+}
+/* ===== KONTAKT – zbicie odstępów (FINAL FIX) ===== */
+
+#kontakt {
+    line-height: 1.2;
+}
+
+#kontakt .contact-label {
+    display: block;
+    margin-bottom: 0;
+    line-height: 1.1;
+}
+
+#kontakt .contact-value {
+    margin: 0;
+    line-height: 1.1;
+}
+
+#kontakt .contact-value a {
+    display: inline-block;
+    line-height: 1.1;
+}
