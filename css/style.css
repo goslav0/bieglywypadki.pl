@@ -242,6 +242,7 @@ section {
 }
 
 /* FADE PO BOKACH */
+
 .logos-slider::before,
 .logos-slider::after {
     content: "";
@@ -876,4 +877,79 @@ section {
 #kontakt .contact-value a {
     display: inline-block;
     line-height: 1.1;
+}
+/* =========================
+   MOBILE – GLOBAL FIX
+========================= */
+
+@media (max-width: 768px) {
+
+    section {
+        padding: 60px 6%;
+    }
+
+}
+/* =========================
+   LICZNIKI – MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .counters {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .counter {
+        padding: 26px 20px;
+    }
+
+    .counter .number {
+        font-size: 42px;
+    }
+
+    .counter p {
+        font-size: 14px;
+    }
+
+}
+/* =========================
+   SPECJALIZACJE – MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .specializations {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .spec-card {
+        padding: 24px 20px;
+    }
+
+    .spec-card h3 {
+        font-size: 18px;
+    }
+
+    .spec-card p {
+        font-size: 14px;
+    }
+
+}
+/* =========================
+   ZAKRES DZIAŁALNOŚCI – MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card {
+        padding: 24px 20px;
+    }
+
 }
