@@ -20,7 +20,22 @@
             <li><a href="#kontakt">Kontakt</a></li>
         </ul>
     </nav>
+<nav>
 
+    <!-- MOBILE MENU BUTTON -->
+    <button class="menu-toggle" aria-label="Menu">
+        ☰
+    </button>
+
+    <ul>
+        <li><a href="#lead">Bezpłatna analiza</a></li>
+        <li><a href="#o-mnie">O mnie</a></li>
+        <li><a href="#zakres">Zakres działalności</a></li>
+        <li><a href="#specjalizacje">Specjalizacje</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+
+</nav>
     <!-- LEAD / FORMULARZ -->
   <section id="lead">
 
@@ -109,7 +124,21 @@
             <div class="logo-item">
                 <img src="img/loga/sadlogo.png" alt="Sąd">
             </div>
+<div class="logo-item">
+    <img src="img/loga/pzmlogo.png" alt="PZM">
+</div>
 
+<div class="logo-item">
+    <img src="img/loga/policjalogo.png" alt="Policja">
+</div>
+
+<div class="logo-item">
+    <img src="img/loga/allianzlogo.png" alt="Allianz">
+</div>
+
+<div class="logo-item">
+    <img src="img/loga/generalilogo.png" alt="Generali">
+</div>
             <!-- DUPLIKATY (dla płynnej animacji) -->
 
             <div class="logo-item">
@@ -131,7 +160,21 @@
             <div class="logo-item">
                 <img src="img/loga/sadlogo.png" alt="Sąd">
             </div>
+<div class="logo-item">
+    <img src="img/loga/pzmlogo.png" alt="PZM">
+</div>
 
+<div class="logo-item">
+    <img src="img/loga/policjalogo.png" alt="Policja">
+</div>
+
+<div class="logo-item">
+    <img src="img/loga/allianzlogo.png" alt="Allianz">
+</div>
+
+<div class="logo-item">
+    <img src="img/loga/generalilogo.png" alt="Generali">
+</div>
         </div>
     </div>
 
@@ -405,7 +448,21 @@ stickyBtn.addEventListener('click', () => {
     </p>
 </footer>
 
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const navList = document.querySelector('nav ul');
 
+menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('open');
+});
+
+// zamknij menu po kliknięciu linku
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        navList.classList.remove('open');
+    });
+});
+</script>
 
 
 </body>
