@@ -953,3 +953,109 @@ section {
     }
 
 }
+/* =========================
+   HERO – MOBILE LOGO (CENTER + BIG)
+========================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-logo {
+        margin-bottom: 20px;
+    }
+
+    .hero-logo img {
+        max-width: 260px;   /* BYŁO ~140–180 */
+        width: 100%;
+    }
+
+}
+/* =========================
+   KONTAKT – MOBILE KOLEJNOŚĆ
+========================= */
+
+@media (max-width: 768px) {
+
+    .contact-wrapper {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .contact-right {
+        order: 1;
+    }
+
+    #sticky-cta.in-contact {
+        order: 2;
+        margin: 10px auto 0;
+    }
+
+    .contact-left {
+        order: 3;
+        margin-top: 20px;
+    }
+
+    .contact-logo {
+        max-width: 200px;
+    }
+
+}
+/* =========================
+   MOBILE MENU – HAMBURGER
+========================= */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    nav {
+        padding: 14px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #111;
+
+        flex-direction: column;
+        gap: 0;
+
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    nav ul li {
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    nav ul a {
+        display: block;
+        padding: 14px 20px;
+        text-align: center;
+    }
+
+    nav ul.open {
+        max-height: 500px;
+    }
+}
