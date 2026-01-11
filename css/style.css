@@ -647,7 +647,7 @@ section {
 ========================= */
 
 #lead {
-    padding-top: 20;
+    padding-top: 0;
 }
 .hero-main {
     margin-top: -40px;
@@ -1060,51 +1060,54 @@ section {
     }
 }
 /* =========================
-   MOBILE FIX – HERO / LOGO
+   MOBILE – HERO FINAL FIX
 ========================= */
 @media (max-width: 768px) {
 
-    /* MENU zajmuje wysokość – kompensacja */
     body {
-        padding-top: 60px;
+        padding-top: 54px; /* dokładnie pod menu */
     }
 
-    /* HERO – kasujemy desktopowe sztuczki */
+    #lead {
+        padding-top: 0;
+    }
+
     .hero-main {
-        padding-top: 30px;     /* BYŁO 100px */
-        margin-top: 0;         /* BYŁO -40px */
-    }
-
-    /* FORMULARZ – nie wciąga hero */
-    .form-box {
+        padding-top: 10px;   /* BYŁO 30px */
         margin-top: 0;
     }
 
-    /* HERO layout */
     .hero {
-        gap: 20px;
+        gap: 14px;
     }
 
-    /* LOGO – większe, ale bez pustki */
     .hero-logo img {
-        max-width: 220px;   /* WIĘKSZE, ale kontrolowane */
+        max-width: 240px;   /* DUŻE logo */
         margin: 0 auto;
         display: block;
     }
 
-    /* Tytuł bliżej logo */
     .hero-text h1 {
-        margin-top: 10px;
-        margin-bottom: 8px;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        font-size: 28px;
     }
 
     .subtitle {
-        margin-bottom: 12px;
+        margin-bottom: 10px;
     }
 
     .hero-info {
-        margin-top: 14px;
-        padding: 16px 18px;
-        font-size: 15px;
+        margin-top: 10px;
+        padding: 14px 16px;
+        font-size: 14px;
+    }
+}
+/* =========================
+   MOBILE – SEKCJE (ZBICIE)
+========================= */
+@media (max-width: 768px) {
+    section {
+        padding: 30px 8%;
     }
 }
