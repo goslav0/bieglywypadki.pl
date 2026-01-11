@@ -394,16 +394,19 @@ const observer = new IntersectionObserver(
     (entries) => {
         entries.forEach(entry => {
 
-            /* FORMULARZ */
-            if (entry.target === formBox) {
-                formVisible = entry.isIntersecting;
-
-                if (!formVisible && !isInContact) {
-                    stickyBtn.classList.add('visible');
-                } else if (formVisible && !isInContact) {
-                    stickyBtn.classList.remove('visible');
-                }
-            }
+if (entry.target === formBox && !isInContact) {
+    if (window.innerWidth <= 768) {
+        // MOBILE – pokaż CTA dopiero po minięciu formularza
+        entry.isIntersecting
+            ? stickyBtn.classList.remove('visible')
+            : stickyBtn.classList.add('visible');
+    } else {
+        // DESKTOP – bez zmian
+        entry.isIntersecting
+            ? stickyBtn.classList.remove('visible')
+            : stickyBtn.classList.add('visible');
+    }
+}
 
             /* KONTAKT */
             if (entry.target === contactSection) {
