@@ -394,17 +394,24 @@ const observer = new IntersectionObserver(
     (entries) => {
         entries.forEach(entry => {
 
-if (entry.target === formBox && !isInContact) {
+         /* FORMULARZ */
+if (entry.target === formBox) {
+    formVisible = entry.isIntersecting;
+
     if (window.innerWidth <= 768) {
-        // MOBILE – pokaż CTA dopiero po minięciu formularza
-        entry.isIntersecting
-            ? stickyBtn.classList.remove('visible')
-            : stickyBtn.classList.add('visible');
+        // MOBILE – pokaż CTA dopiero PO formularzu
+        if (!formVisible && !isInContact) {
+            stickyBtn.classList.add('visible');
+        } else {
+            stickyBtn.classList.remove('visible');
+        }
     } else {
         // DESKTOP – bez zmian
-        entry.isIntersecting
-            ? stickyBtn.classList.remove('visible')
-            : stickyBtn.classList.add('visible');
+        if (!formVisible && !isInContact) {
+            stickyBtn.classList.add('visible');
+        } else if (formVisible && !isInContact) {
+            stickyBtn.classList.remove('visible');
+        }
     }
 }
 
