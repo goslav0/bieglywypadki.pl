@@ -1111,3 +1111,24 @@ section {
         padding: 30px 8%;
     }
 }
+/* =========================
+   MOBILE – HERO PODNIESIONY
+========================= */
+@media (max-width: 768px) {
+
+    /* cały lead bliżej góry */
+    #lead {
+        padding-top: 10px;   /* było za dużo */
+    }
+
+    /* hero (logo + tekst) jeszcze wyżej */
+    .hero-main {
+        margin-top: -40px;   /* kluczowe */
+        padding-top: 0;
+    }
+
+    /* logo bliżej menu */
+    .hero-logo img {
+        margin-top: -20px;
+    }
+}
